@@ -108,7 +108,7 @@ while game:
             #elif event.key == pygame.K_s:
             #    player.speed_y = 5
             if event.key == pygame.K_a:
-                player_speed_x = -5
+                player.speed_x = -5
             elif event.key == pygame.K_d:
                 player.speed_x = 5     
             elif event.key == pygame.K_SPACE:
@@ -159,7 +159,7 @@ while game:
         if pygame.sprite.spritecollide(player, asteroids, True):
             if player.hp >3:
                 player.hp -= 3
-                asteroid = Asteroid('asteroid.png', 70, 70, random.randint(500,800), random.randint(-40,40), -5, 5)
+                asteroid = Asteroid('asteroid.jpg', 70, 70, random.randint(500,800), random.randint(-40,40), -5, 5)
                 asteroids.add(asteroid)
             else:
                 finish = True
@@ -169,4 +169,5 @@ while game:
         
 
     pygame.display.update()
+
     clock.tick(60)
